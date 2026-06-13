@@ -1,0 +1,16 @@
+{
+  "name": "saturday-skills",
+  "description": "Saturday's official Claude plugins — evidence-based endurance fueling powered by the Saturday connector.",
+  "owner": {
+    "name": "Saturday Inc",
+    "email": "api@saturday.fit",
+    "url": "https://saturday.fit"
+  },
+  "plugins": [
+    {
+      "name": "saturday",
+      "source": "./plugins/saturday",
+      "description": "Evidence-based endurance fueling for Claude: personalized carb/sodium/fluid prescriptions, product-fit analysis, and an interactive bottle-builder, powered by the Saturday connector (api.saturday.fit/mcp)."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "saturday": {
+      "type": "http",
+      "url": "https://api.saturday.fit/mcp"
+    }
+  }
+}

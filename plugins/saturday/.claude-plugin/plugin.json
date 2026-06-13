@@ -1,0 +1,24 @@
+{
+  "name": "saturday",
+  "displayName": "Saturday Endurance Fueling",
+  "version": "1.0.0",
+  "description": "Evidence-based endurance fueling for Claude: personalized carb/sodium/fluid prescriptions, product-fit analysis, and an interactive bottle-builder, powered by the Saturday connector.",
+  "author": {
+    "name": "Saturday Inc",
+    "email": "api@saturday.fit",
+    "url": "https://saturday.fit"
+  },
+  "homepage": "https://docs.saturday.fit/guides/mcp-integration",
+  "repository": "https://github.com/SaturdayInc/saturday-skills",
+  "license": "MIT",
+  "keywords": [
+    "endurance",
+    "nutrition",
+    "fueling",
+    "hydration",
+    "cycling",
+    "running",
+    "triathlon",
+    "sports-science"
+  ]
+}
