@@ -2,7 +2,7 @@
   "name": "saturday",
   "displayName": "Saturday Endurance Fueling",
   "version": "1.0.0",
-  "description": "Evidence-based endurance fueling for Claude: personalized carb/sodium/fluid prescriptions, product-fit analysis, and an interactive bottle-builder, powered by the Saturday connector.",
+  "description": "Endurance fueling for Claude: personalized carb, sodium, and fluid prescriptions, product-fit analysis, and bottle-by-bottle mix plans, powered by the Saturday connector.",
   "author": {
     "name": "Saturday Inc",
     "email": "api@saturday.fit",
