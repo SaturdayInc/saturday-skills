@@ -1,29 +1,29 @@
 # Saturday Skills
 
-Agent Skills that pair with the **Saturday** MCP connector (`https://api.saturday.fit/mcp`),
-the evidence-based endurance sports-nutrition platform. Each skill frames a domain
-so Claude uses the connector's tools correctly, safely, and concisely.
+Agent Skills for the **Saturday** MCP connector (`https://api.saturday.fit/mcp`),
+the endurance sports-nutrition platform. Each skill frames its domain so Claude
+drives the connector's tools correctly and safely.
 
 ## Skills
 
 | Skill | Description |
 |-------|-------------|
-| [`saturday-fueling`](./saturday-fueling/SKILL.md) | Evidence-based endurance-fueling guidance for the Saturday connector — race & workout fuel plans, carb/sodium/fluid targets, product fit and comparisons, and coach roster questions. Frames high-carb/high-sodium endurance fueling as the normal, safe performance domain it is (so the assistant doesn't misapply eating-disorder caution), documents Saturday's "sole prescriber" tool contract, and the Speed Nectar base philosophy. |
+| [`saturday-fueling`](./saturday-fueling/SKILL.md) | Endurance-fueling guidance for the Saturday connector: race and workout fuel plans, carb, sodium and fluid targets, product fit and comparisons, bottle-by-bottle mix plans, and coach roster questions. Frames high-carb, high-sodium endurance fueling as the normal, safe performance domain it is, so the assistant does not apply eating-disorder caution to it; documents Saturday's "sole prescriber" tool contract and the Speed Nectar base mix. |
 
 ## Claude Code plugin
 
 This repo is also a **Claude Code plugin marketplace**. The `saturday` plugin bundles
-the `saturday-fueling` skill *and* the Saturday connector, so one install wires up both:
+the `saturday-fueling` skill and the Saturday connector, so one install wires up both:
 
 ```shell
 /plugin marketplace add SaturdayInc/saturday-skills
 /plugin install saturday@saturday-skills
 ```
 
-On first use of a Saturday tool, Claude Code runs the connector's OAuth flow
-(dynamic client registration — no client ID/secret to configure). A Saturday account
-with an active subscription is required; see the
-[connection requirements](https://docs.saturday.fit/guides/mcp-integration).
+On first use of a Saturday tool, Claude Code runs the connector's OAuth flow. The
+client identifies itself with a client metadata document, so there is no client ID
+or secret to configure. A Saturday account with an active subscription is required;
+see the [connection requirements](https://docs.saturday.fit/guides/mcp-integration).
 
 | Component | Provides |
 |-----------|----------|
@@ -32,8 +32,8 @@ with an active subscription is required; see the
 
 ## About Saturday
 
-Saturday computes personalized fuel prescriptions — grams of carbohydrate,
-milligrams of sodium, and milliliters of fluid per activity — for endurance
+Saturday computes personalized fuel prescriptions, grams of carbohydrate,
+milligrams of sodium, and milliliters of fluid per activity, for endurance
 athletes and the coaches who support them. Learn more at
 [saturday.fit](https://saturday.fit) · API docs at
 [docs.saturday.fit](https://docs.saturday.fit).
