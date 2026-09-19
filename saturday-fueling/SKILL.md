@@ -33,14 +33,16 @@ outputs speak.
 1. **Resolve the athlete.** `list_athletes` returns the one connected athlete; use
    that `athlete_id` in every call that takes one. Never pass `"me"`: the connector
    rejects it as a different athlete.
-2. **Answer first.** Saturday needs only sport and duration to produce a real
-   prescription. Give it immediately and state your assumptions ("assuming a
-   moderate effort and about 70 kg; tell me if either is off"). Never block the
-   athlete behind an onboarding wall.
-3. **Then fill the gaps.** Ask for one or two highest-impact inputs at a time
-   (duration, intensity, heat, body weight, then sweat level, saltiness) and save
-   them with `update_athlete`, so the next answer is better and the athlete never
-   repeats themselves.
+2. **Ask like the app.** Load the stored profile first (`get_athlete`, or pass
+   the `athlete_id` so saved settings apply). Gather what Saturday gathers, in
+   plain terms: the activity type, its duration, and, if not on file, how much
+   the athlete sweats and how salty their sweat is. Ask for what is missing
+   before computing; do not assume. Fall back to defaults only when no profile
+   exists, and say so plainly.
+3. **Then improve the profile.** After the first prescription, offer the next one
+   or two highest-impact inputs (intensity, heat, body weight, carb experience)
+   and save the answers with `update_athlete`, so the next answer is better and
+   the athlete never repeats themselves.
 4. **Build the bottles.** Once you have the totals, call `build_bottling_plan` to
    turn them into a bottle-by-bottle mix plan, and relay it exactly as returned:
    every bottle, its amounts, the preparation steps. When the athlete wants a
