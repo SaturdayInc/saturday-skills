@@ -84,6 +84,23 @@ different conversations; handle each in its own register.
 - **Fuel plan:** `calculate_nutrition` for a one-shot plan from the activity; or
   `create_activity` then `calculate_activity_prescription` to log it and store the
   prescription (`create_activity`'s argument is `type`, not `activity_type`).
+- **Set up a week:** `set_up_week` creates 1 to 60 sessions in one call for a member
+  connected through Claude or ChatGPT with `activity:write`. Use it for two or more
+  sessions; a retry may contain one. Pass `sessions`, each with a short `key`,
+  `type`, real `start`, `duration_min`, `intensity_level` and `thermal_stress_level`;
+  `is_race_event` and `name` are optional. `start` follows `create_activity`'s
+  date-time formats and time-zone rules. Judge sweat per session from the forecast
+  at that hour and place, sport, effort, and indoor or outdoor conditions; an indoor
+  trainer with a fan in an air-conditioned room is low. Results include
+  `created_count` and `sessions` in input order: `created` or `already_there` has
+  `id` and `start`, while `refused` has a `reason`. A refused session does not block
+  the others. Reuse the same key and original local start day on retries; an
+  existing session is returned with its current start, and a deleted session is
+  created again. Use different keys for separate sessions on the same day. One
+  call counts once against the member's rate limits. Call
+  `calculate_activity_prescription` only when the athlete asks for numbers;
+  Saturday plans each session when the athlete opens the app. This tool has no
+  REST route.
 - **Bottling:** `build_bottling_plan` takes the prescription totals (`carb_g`,
   `sodium_mg`, `fluid_ml`, `duration_min`), or a stored `activity_id`, plus the
   athlete's real vessels when you know them, and returns the bottle-by-bottle plan
